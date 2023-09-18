@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations.EntryComment
+namespace Sozluk.Api.Infrastructure.Persistence.Context.EntityConfigurations.EntryComment
 {
     public class EntryCommentEntityConfiguration : BaseEntityConfiguartions<Api.Domain.Models.EntryComment>
     {
@@ -14,11 +14,13 @@ namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations.EntryCo
         {
             base.Configure(builder);
 
-            builder.ToTable("entrycomment", SozlukContext.DEFAULT_SCHEMA);
+            builder.ToTable("entrycomment", SozlukDboContext.DEFAULT_SCHEMA);
 
             builder.HasOne(i => i.CreatedBy)
                 .WithMany(i => i.EntryComments)
-                .HasForeignKey(i => i.CreatedById);
+                .HasForeignKey(i => i.CreatedById)
+                .OnDelete(DeleteBehavior.Restrict);
+
 
             builder.HasOne(i => i.Entry)
                 .WithMany(i => i.EntryComments)

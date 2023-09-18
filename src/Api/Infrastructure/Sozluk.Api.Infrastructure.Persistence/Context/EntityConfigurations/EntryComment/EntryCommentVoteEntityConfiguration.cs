@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Sozluk.Api.Domain.Models;
 
-namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations.EntryComment
+namespace Sozluk.Api.Infrastructure.Persistence.Context.EntityConfigurations.EntryComment
 {
     public class EntryCommentVoteEntityConfiguration : BaseEntityConfiguartions<EntryCommentVote>
     {
@@ -10,11 +10,13 @@ namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations.EntryCo
         {
             base.Configure(builder);
 
-            builder.ToTable("entrycommentvote", SozlukContext.DEFAULT_SCHEMA);
+            builder.ToTable("entrycommentvote", SozlukDboContext.DEFAULT_SCHEMA);
 
             builder.HasOne(i => i.EntryComment)
                 .WithMany(i => i.EntryCommentVotes)
-                .HasForeignKey(i => i.EntryCommentId);
+                .HasForeignKey(i => i.EntryCommentId)
+                .OnDelete(DeleteBehavior.Restrict);
+
 
         }
     }

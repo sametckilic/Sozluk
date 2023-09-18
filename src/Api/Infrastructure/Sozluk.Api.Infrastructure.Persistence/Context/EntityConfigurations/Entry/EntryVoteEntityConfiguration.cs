@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations.Entry
+namespace Sozluk.Api.Infrastructure.Persistence.Context.EntityConfigurations.Entry
 {
     public class EntryVoteEntityConfiguration : BaseEntityConfiguartions<EntryVote>
     {
@@ -15,7 +15,7 @@ namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations.Entry
         {
             base.Configure(builder);
 
-            builder.ToTable("entryvote", SozlukContext.DEFAULT_SCHEMA);
+            builder.ToTable("entryvote", SozlukDboContext.DEFAULT_SCHEMA);
 
             builder.HasOne(i => i.Entry)
                 .WithMany(i => i.EntryVotes)

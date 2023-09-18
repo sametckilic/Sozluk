@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations.Entry
+namespace Sozluk.Api.Infrastructure.Persistence.Context.EntityConfigurations
 {
     public class EmailConfirmationEntityConfiguration : BaseEntityConfiguartions<EmailConfirmation>
     {
@@ -15,9 +15,7 @@ namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations.Entry
         {
             base.Configure(builder);
 
-            builder.ToTable("emailconfiguration", SozlukContext.DEFAULT_SCHEMA);
-
-
+            builder.ToTable("emailconfirmation", SozlukDboContext.DEFAULT_SCHEMA);
         }
     }
 }

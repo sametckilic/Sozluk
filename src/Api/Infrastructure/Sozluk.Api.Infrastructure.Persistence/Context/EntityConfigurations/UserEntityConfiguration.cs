@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations
+namespace Sozluk.Api.Infrastructure.Persistence.Context.EntityConfigurations
 {
     public class UserEntityConfiguration : BaseEntityConfiguartions<User>
     {
@@ -15,7 +15,7 @@ namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations
         {
             base.Configure(builder);
 
-            builder.ToTable("user", SozlukContext.DEFAULT_SCHEMA);
+            builder.ToTable("user", SozlukDboContext.DEFAULT_SCHEMA);
         }
     }
 }

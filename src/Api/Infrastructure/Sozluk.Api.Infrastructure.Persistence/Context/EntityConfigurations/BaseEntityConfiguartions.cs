@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations;
+namespace Sozluk.Api.Infrastructure.Persistence.Context.EntityConfigurations;
 
 public abstract class BaseEntityConfiguartions<T> : IEntityTypeConfiguration<T> where T : BaseEntity
 {
