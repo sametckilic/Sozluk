@@ -1,13 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Sozluk.Api.Domain.Models;
+using Sozluk.Api.Infrastructure.Persistence.Context;
+using Sozluk.Api.Infrastructure.Persistence.EntityConfigurations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sozluk.Api.Infrastructure.Persistence.Context.EntityConfigurations.Entry
+namespace Sozluk.Api.Infrastructure.Persistence.EntityConfigurations.Entry
 {
     public class EntryVoteEntityConfiguration : BaseEntityConfiguartions<EntryVote>
     {

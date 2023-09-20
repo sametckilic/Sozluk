@@ -1,16 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Sozluk.Api.Infrastructure.Persistence.Context;
+using Sozluk.Api.Infrastructure.Persistence.EntityConfigurations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sozluk.Api.Infrastructure.Persistence.Context.EntityConfigurations.EntryComment
+namespace Sozluk.Api.Infrastructure.Persistence.EntityConfigurations.EntryComment
 {
-    public class EntryCommentEntityConfiguration : BaseEntityConfiguartions<Api.Domain.Models.EntryComment>
+    public class EntryCommentEntityConfiguration : BaseEntityConfiguartions<Domain.Models.EntryComment>
     {
-        public override void Configure(EntityTypeBuilder<Api.Domain.Models.EntryComment> builder)
+        public override void Configure(EntityTypeBuilder<Domain.Models.EntryComment> builder)
         {
             base.Configure(builder);
 
