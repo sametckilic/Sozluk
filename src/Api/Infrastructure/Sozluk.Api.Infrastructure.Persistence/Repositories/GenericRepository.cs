@@ -13,12 +13,12 @@ namespace Sozluk.Api.Infrastructure.Persistence.Repositories
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity
     {
-        private readonly SozlukDboContext dbContext;
+        private readonly DbContext dbContext;
 
 
         protected DbSet<TEntity> entity => dbContext.Set<TEntity>();
 
-        public GenericRepository(SozlukDboContext dbContext)
+        public GenericRepository(DbContext dbContext)
         {
             this.dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }

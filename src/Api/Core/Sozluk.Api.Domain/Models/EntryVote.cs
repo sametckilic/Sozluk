@@ -1,4 +1,4 @@
-﻿using Sozluk.Common.ViewModels;
+﻿using Sozluk.Common.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

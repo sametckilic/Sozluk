@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Sozluk.Api.Application.Interfaces.Repositories;
 using Sozluk.Api.Infrastructure.Persistence.Context;
+using Sozluk.Api.Infrastructure.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +28,9 @@ namespace Sozluk.Api.Infrastructure.Persistence.Extensions
 
             //var seeddata = new seeddata();
             //seeddata.seedasync(configuration).getawaiter().getresult();
+
+            services.AddScoped<IUserRepository, UserRepository>();
+
             return services;
         }
     }
