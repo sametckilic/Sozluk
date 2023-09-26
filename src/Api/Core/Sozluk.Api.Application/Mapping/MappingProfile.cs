@@ -14,12 +14,20 @@ namespace Sozluk.Api.Application.Mapping
     {
         public MappingProfile()
         {
+
+            // user maps
+
             CreateMap<User, LoginUserViewModel>()
                 .ReverseMap();
 
             CreateMap<CreateUserCommand, User>();
 
             CreateMap<UpdateUserCommand, User>();
+
+            //entries map
+
+            CreateMap<CreateEntryCommand, Entry>()
+                .ReverseMap();
         }
     }
 }
