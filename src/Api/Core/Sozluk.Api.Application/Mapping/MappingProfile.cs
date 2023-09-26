@@ -17,11 +17,9 @@ namespace Sozluk.Api.Application.Mapping
             CreateMap<User, LoginUserViewModel>()
                 .ReverseMap();
 
-            CreateMap<User, CreateUserCommand>()
-                .ReverseMap();
+            CreateMap<CreateUserCommand, User>();
 
-            CreateMap<User, UpdateUserCommand>()
-               .ReverseMap();
+            CreateMap<UpdateUserCommand, User>();
         }
     }
 }
