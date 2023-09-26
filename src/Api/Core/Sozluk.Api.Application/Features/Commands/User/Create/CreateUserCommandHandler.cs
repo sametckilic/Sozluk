@@ -38,7 +38,7 @@ namespace Sozluk.Api.Application.Features.Commands.User.Create
 
             //Email changed/created
 
-            if(rows > 0)
+            if (rows > 0)
             {
                 var @event = new UserEmailChangeEvent()
                 {
