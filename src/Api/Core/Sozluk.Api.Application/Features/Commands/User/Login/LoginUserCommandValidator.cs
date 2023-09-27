@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using Sozluk.Common.Models.RequestModels;
+using Sozluk.Common.Models.RequestModels.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;

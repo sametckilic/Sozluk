@@ -2,7 +2,7 @@
 using Sozluk.Common;
 using Sozluk.Common.Events.Entry;
 using Sozluk.Common.Infrastructure;
-using Sozluk.Common.Models.RequestModels;
+using Sozluk.Common.Models.RequestModels.Entry;
 using System;
 using System.Collections.Generic;
 using System.Linq;

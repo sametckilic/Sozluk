@@ -6,7 +6,7 @@ using Sozluk.Api.Application.Interfaces.Repositories;
 using Sozluk.Common.Infrastructure;
 using Sozluk.Common.Infrastructure.Exeptions;
 using Sozluk.Common.Models.Queries;
-using Sozluk.Common.Models.RequestModels;
+using Sozluk.Common.Models.RequestModels.User;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;

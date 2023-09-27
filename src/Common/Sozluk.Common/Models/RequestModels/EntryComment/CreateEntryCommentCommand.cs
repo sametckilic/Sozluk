@@ -5,18 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sozluk.Common.Models.RequestModels
+namespace Sozluk.Common.Models.RequestModels.EntryComment
 {
-    public class CreateEntryCommand : IRequest<Guid>
+    public class CreateEntryCommentCommand : IRequest<Guid>
     {
-        public CreateEntryCommand(string subject, string content, Guid createdById)
+        public CreateEntryCommentCommand(Guid entryId, string content, Guid createdById)
         {
-            Subject = subject;
+            EntryId = entryId;
             Content = content;
             CreatedById = createdById;
         }
 
-        public string Subject { get; set; }
+        public Guid EntryId { get; set; }
         public string Content { get; set; }
         public Guid CreatedById { get; set; }
 

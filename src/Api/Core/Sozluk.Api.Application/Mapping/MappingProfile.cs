@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using Sozluk.Api.Domain.Models;
 using Sozluk.Common.Models.Queries;
-using Sozluk.Common.Models.RequestModels;
+using Sozluk.Common.Models.RequestModels.Entry;
+using Sozluk.Common.Models.RequestModels.EntryComment;
+using Sozluk.Common.Models.RequestModels.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,11 @@ namespace Sozluk.Api.Application.Mapping
             //entries map
 
             CreateMap<CreateEntryCommand, Entry>()
+                .ReverseMap();
+
+            // entry comments map
+
+            CreateMap<CreateEntryCommentCommand, EntryComment>()
                 .ReverseMap();
         }
     }

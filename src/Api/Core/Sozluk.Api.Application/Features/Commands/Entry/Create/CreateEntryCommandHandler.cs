@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Sozluk.Api.Application.Interfaces.Repositories;
-using Sozluk.Common.Models.RequestModels;
+using Sozluk.Common.Models.RequestModels.Entry;
 using System;
 using System.Collections.Generic;
 using System.Linq;

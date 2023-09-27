@@ -6,12 +6,12 @@ using Sozluk.Common.Events.User;
 using Sozluk.Common.Infrastructure;
 using Sozluk.Common;
 using Sozluk.Common.Infrastructure.Exeptions;
-using Sozluk.Common.Models.RequestModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sozluk.Common.Models.RequestModels.User;
 
 namespace Sozluk.Api.Application.Features.Commands.User.Update
 {

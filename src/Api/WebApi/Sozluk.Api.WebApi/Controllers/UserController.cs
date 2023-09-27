@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Sozluk.Common.Models.RequestModels;
+using Sozluk.Common.Models.RequestModels.User;
 
 namespace Sozluk.Api.WebApi.Controllers
 {

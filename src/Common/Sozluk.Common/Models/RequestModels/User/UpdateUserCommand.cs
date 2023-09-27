@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sozluk.Common.Models.RequestModels
+namespace Sozluk.Common.Models.RequestModels.User
 {
     public class UpdateUserCommand : IRequest<Guid>
     {
