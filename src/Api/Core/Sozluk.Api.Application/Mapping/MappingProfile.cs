@@ -31,6 +31,9 @@ namespace Sozluk.Api.Application.Mapping
             CreateMap<CreateEntryCommand, Entry>()
                 .ReverseMap();
 
+            CreateMap<Entry, GetEntriesViewModel>()
+                .ForMember(x => x.CommentCount, y => y.MapFrom(z => z.EntryComments.Count));
+
             // entry comments map
 
             CreateMap<CreateEntryCommentCommand, EntryComment>()

@@ -18,7 +18,7 @@ namespace Sozluk.Common.Models.RequestModels.Entry
 
         public string Subject { get; set; }
         public string Content { get; set; }
-        public Guid CreatedById { get; set; }
+        public Guid? CreatedById { get; set; }
 
     }
 }

@@ -5,7 +5,7 @@ using Sozluk.Api.Domain.Models;
 using Sozluk.Common.Events.User;
 using Sozluk.Common.Infrastructure;
 using Sozluk.Common;
-using Sozluk.Common.Infrastructure.Exeptions;
+using Sozluk.Common.Infrastructure.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

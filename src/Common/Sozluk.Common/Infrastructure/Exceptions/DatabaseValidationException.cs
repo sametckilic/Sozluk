@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sozluk.Common.Infrastructure.Exeptions
+namespace Sozluk.Common.Infrastructure.Exceptions
 {
     public class DatabaseValidationException : Exception
     {

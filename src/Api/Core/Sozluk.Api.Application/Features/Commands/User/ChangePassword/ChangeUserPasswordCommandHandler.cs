@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Sozluk.Api.Application.Interfaces.Repositories;
 using Sozluk.Common.Infrastructure;
-using Sozluk.Common.Infrastructure.Exeptions;
+using Sozluk.Common.Infrastructure.Exceptions;
 using Sozluk.Common.Models.RequestModels.User;
 using System;
 using System.Collections.Generic;

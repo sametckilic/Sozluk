@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Sozluk.Api.Application.Interfaces.Repositories;
 using Sozluk.Common.Infrastructure;
-using Sozluk.Common.Infrastructure.Exeptions;
+using Sozluk.Common.Infrastructure.Exceptions;
 using Sozluk.Common.Models.Queries;
 using Sozluk.Common.Models.RequestModels.User;
 using System;
