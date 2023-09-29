@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sozluk.Api.Application.Features.Queries.GetQueries
+namespace Sozluk.Api.Application.Features.Queries.GetEntries
 {
     public class GetEntriesQuery : IRequest<List<GetEntriesViewModel>>
     {

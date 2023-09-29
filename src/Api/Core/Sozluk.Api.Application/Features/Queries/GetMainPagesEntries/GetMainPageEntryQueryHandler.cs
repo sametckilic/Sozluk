@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Sozluk.Api.Application.Interfaces.Repositories;
 using Sozluk.Api.Domain.Models;
+using Sozluk.Common.Infrastructure.Extensions;
 using Sozluk.Common.Models.Pages;
 using Sozluk.Common.Models.Queries;
 using System;
@@ -15,15 +16,13 @@ namespace Sozluk.Api.Application.Features.Queries.GetMainPagesEntries
 {
     public class GetMainPageEntryQueryHandler : IRequestHandler<GetMainPageEntryQuery, PagedViewModel<GetEntryDetailViewModel>>
     {
-        private readonly IMapper mapper;
         private readonly IEntryRepository entryRepository;
 
-        public GetMainPageEntryQueryHandler(IMapper mapper, IEntryRepository entryRepository, Guid? userId)
+        public GetMainPageEntryQueryHandler(IEntryRepository entryRepository)
         {
-            this.mapper = mapper;
             this.entryRepository = entryRepository;
         }
-        public Task<PagedViewModel<GetEntryDetailViewModel>> Handle(GetMainPageEntryQuery request, CancellationToken cancellationToken)
+        public async Task<PagedViewModel<GetEntryDetailViewModel>> Handle(GetMainPageEntryQuery request, CancellationToken cancellationToken)
         {
             var query = entryRepository.AsQueryable();
 
@@ -40,13 +39,16 @@ namespace Sozluk.Api.Application.Features.Queries.GetMainPagesEntries
                 FavoritedCount = i.EntryFavorites.Count,
                 CreatedDate = i.CreateDate,
                 CreatedByUserName = i.CreatedBy.UserName,
-                VoteType = request.UserId.HasValue && i.EntryVotes.Any(j => j.CreatedById == request.UserId)
-                                                        ? i.EntryVotes.FirstOrDefault(j => j.CreatedById == request.UserId).VoteType
-                                                        : Common.Models.VoteType.None
+                VoteType =
+                request.UserId.HasValue && i.EntryVotes.Any(j => j.CreatedById == request.UserId)
+                ? i.EntryVotes.FirstOrDefault(j => j.CreatedById == request.UserId).VoteType
+                : Common.Models.VoteType.None
 
             });
 
+            var entries = await list.GetPaged(request.Page, request.PageSize);
 
+            return new PagedViewModel<GetEntryDetailViewModel>(entries.Results, entries.PageInfo);
         }
     }
 }

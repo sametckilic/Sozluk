@@ -14,7 +14,6 @@ namespace Sozluk.Api.Application.Features.Queries.GetMainPagesEntries
     public class GetMainPageEntryQuery : BasePagedQuery, IRequest<PagedViewModel<GetEntryDetailViewModel>>
     {
 
-
         public GetMainPageEntryQuery(Guid? userId, int page, int pageSize) : base(page, pageSize)
         {
             UserId = userId;

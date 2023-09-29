@@ -1,7 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Sozluk.Api.Application.Features.Queries.GetQueries;
+using Sozluk.Api.Application.Features.Queries.GetEntries;
+using Sozluk.Api.Application.Features.Queries.GetMainPagesEntries;
 using Sozluk.Common.Models.RequestModels.Entry;
 using Sozluk.Common.Models.RequestModels.EntryComment;
 
@@ -21,6 +22,15 @@ namespace Sozluk.Api.WebApi.Controllers
         public async Task<IActionResult> GetEntries([FromQuery] GetEntriesQuery query)
         {
             var entries = await mediator.Send(query);
+
+            return Ok(entries);
+        }
+
+        [HttpGet]
+        [Route("MainPageEntries")]
+        public async Task<IActionResult> GetMainPageEntries(int page, int pageSize)
+        {
+            var entries = await mediator.Send(new GetMainPageEntryQuery(UserId, page, pageSize));
 
             return Ok(entries);
         }
