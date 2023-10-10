@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sozluk.Api.Infrastructure.Persistence.Context;
 
@@ -11,9 +12,10 @@ using Sozluk.Api.Infrastructure.Persistence.Context;
 namespace Sozluk.Api.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(SozlukDboContext))]
-    partial class SozlukDboContextModelSnapshot : ModelSnapshot
+    [Migration("20231010113050_UpdateMigraiton")]
+    partial class UpdateMigraiton
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Sozluk.Api.Application.Interfaces.Repositories;
+using Sozluk.Common.Infrastructure.Extensions;
 using Sozluk.Common.Models.Pages;
 using Sozluk.Common.Models.Queries;
 using System;
@@ -16,7 +17,7 @@ namespace Sozluk.Api.Application.Features.Queries.GetEntryComments
     {
         private readonly IEntryCommentRepository entryCommentRepository;
 
-        public GetEntryCommentsQueryHandler(IEntryRepository entryCommentRepository)
+        public GetEntryCommentsQueryHandler(IEntryCommentRepository entryCommentRepository)
         {
             this.entryCommentRepository = entryCommentRepository;
         }
